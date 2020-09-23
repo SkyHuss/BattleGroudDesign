@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css"> 
+        <link rel="icon" type="image/x-icon" href="https://d2q63o9r0h0ohi.cloudfront.net/images/icons/favicon-6eb3c4e3d34a90d05dda08ee5d8024e191f23fd7500428011b48ffb7c141da590456ca053a66f9893bef76445eb88980ea51c806b650564685fc4b2b40686d17.ico">
+        <title>Champs de bataille (test)</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="nav-content">
+                <div class="left-buttons">
+                    <div id="btn1" class="button active" onclick="toggleCheckbox(this.id)" data-tool-tip="Héros">
+                        <img src="https://d2q63o9r0h0ohi.cloudfront.net/images/battlegrounds/icon_hero-486b54c1d9178e57d6e3c26d1b60d1ae0b52b475151c7bd5c14d810aa39086d5535210c15ef28e789ca86da3a52528777a425c6808fecc7420aa07d149cc596f.png" alt="">
+                    </div>
+                    <div id="btn2" class="button active" onclick="toggleCheckbox(this.id)" data-tool-tip="Serviteurs">
+                        <img src="https://d2q63o9r0h0ohi.cloudfront.net/images/battlegrounds/icon_card-e1091f38a90b950ed64adaccf468fcec24f9c3981d1b794d602e935c785404020fcb386436526e1e4729d243d2f9a12fd603950d2f5352ab02ce4c7c05558ea7.png" alt="">
+                    </div>
+                </div>
+                <div class="search-bar-container">
+                    <div class="search-bar" id="search-bar">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M58.22,11.86a30.74,30.74,0,0,0-24.54,49.3L12.44,81.92a4.79,4.79,0,0,0,3.35,8.22,4.74,4.74,0,0,0,3.35-1.37L40.57,67.83a30.77,30.77,0,1,0,17.65-56Zm0,52a21.2,21.2,0,1,1,21.19-21.2A21.22,21.22,0,0,1,58.22,63.84Z"></path></svg>
+                        <input type="text" name="user-search" id="search-input" placeholder="Rechercher" onkeyup="isSearchActive()">
+                    </div>
+                </div>
+                <div class="right-buttons">
+                    <div class="filter-button">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <title>icon_filter</title>
+                            <path d="M18.75,32.1H54.3a11.81,11.81,0,0,0,21.42,0h5.53a4.91,4.91,0,0,0,0-9.82H75.87a11.85,11.85,0,0,0-21.71,0H18.75a4.91,4.91,0,0,0,0,9.82Z"></path><path d="M81.25,45.2h-35a11.81,11.81,0,0,0-21.37,0h-6.1a4.92,4.92,0,0,0,0,9.83h5.91a11.85,11.85,0,0,0,21.75,0H81.25a4.92,4.92,0,0,0,0-9.83Z"></path><path d="M81.25,68.13H75.71a11.84,11.84,0,0,0-21.67,0H18.75a4.91,4.91,0,1,0,0,9.82H54.14A11.81,11.81,0,0,0,75.6,78h5.65a4.91,4.91,0,0,0,0-9.82Z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        <div class="content">
+            Content here
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        function toggleCheckbox(clicked_id) {
+            document.getElementById(clicked_id).classList.toggle("active");
+        }
+
+        function isSearchActive(){
+
+            const searchBar = document.getElementById("search-bar");
+            const searchInput = document.getElementById("search-input");
+
+            if (searchInput.value.length == 0) {
+                if(searchBar.classList.contains("active")) {
+                    searchBar.classList.remove("active");
+                }
+            } else {
+                if(!searchBar.classList.contains("active")) {
+                    searchBar.classList.add("active");
+                }
+            }
+
+        }
+
+    </script>
+</html>
